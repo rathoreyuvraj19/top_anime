@@ -1,0 +1,25 @@
+<h1>
+    <%= title %>
+</h1>
+<div id="container">
+    <%content.forEach((val)=>{ %>
+        <a class="card" href="<%= val.url %>" target="_blank">
+            <% if(val.score!==null){%>
+                <div id="score">
+                    <h2>
+                        ⭐<%= val.score %>
+                    </h2>
+                </div>
+                <% } %>
+                    <img id="<%= val.title %>" src="<%= val.images.jpg.large_image_url %>" alt="">
+                    <label for="<%= val.title %>">
+                        <% if(val.rank!==null){%>
+                            <%= val.rank %>. <% } %>
+                                    <%= val.title %>
+                    </label>
+        </a>
+        <% }) %>
+</div>
+</body>
+
+</html>
